@@ -119,16 +119,16 @@ Function InstallR {
 }
 
 Function InstallRtools40 {
-  $rtoolsurl = $CRAN + "/bin/windows/Rtools/rtools40-x86_64.exe"
+  $rtoolsurl = $CRAN + "/bin/windows/Rtools/rtools42/files/rtools42-5355-5357.exe"
 
-  Progress ("Downloading Rtools40 from: " + $rtoolsurl)
-  & "C:\Program Files\Git\mingw64\bin\curl.exe" -s -o ../rtools40-x86_64.exe -L $rtoolsurl
+  Progress ("Downloading Rtools42 from: " + $rtoolsurl)
+  & "C:\Program Files\Git\mingw64\bin\curl.exe" -s -o ../rtools42-x86_64.exe -L $rtoolsurl
 
-  Progress "Running Rtools40 installer"
-  Start-Process -FilePath ..\rtools40-x86_64.exe -ArgumentList /VERYSILENT -NoNewWindow -Wait
+  Progress "Running Rtools42 installer"
+  Start-Process -FilePath ..\rtools42-x86_64.exe -ArgumentList /VERYSILENT -NoNewWindow -Wait
 
   Progress "Setting PATH"
-  $env:PATH = 'c:\rtools40\usr\bin;c:\rtools40\mingw64\bin;' + $env:PATH
+  $env:PATH = 'c:\rtools42\usr\bin;c:\rtools42\mingw64\bin;' + $env:PATH
 }
 
 Function InstallRtools {
